@@ -11,13 +11,13 @@ namespace lookandsay
             for (int iter = 0; iter < NUM_ITERATIONS; iter++)
             {
                 string newNumber = "";
-                int digit = Int32.Parse(number.Substring(0, 1));
-                int currDigit = digit;
+                string digit = number.Substring(0, 1);
+                string currDigit = digit;
                 int digitCount = 0;
                 for (int i = 0; i < number.Length; i++)
                 {
                     ++digitCount;
-                    currDigit = Int32.Parse(number.Substring(i, 1));
+                    currDigit = number.Substring(i, 1);
                     if (currDigit != digit)
                     {
                         newNumber += calculate_digits(digit, digitCount - 1);
@@ -31,7 +31,7 @@ namespace lookandsay
             }
         }
 
-        private static string calculate_digits(int digit, int count)
+        private static string calculate_digits(string digit, int count)
         {
             return count.ToString() + digit.ToString();
         }
